@@ -13,6 +13,8 @@
 
 			
 1. Use git clone to clone the terraform repository.
+run $ git clone https://github.com/IdanErgaz/Terraform-IaC.git
+
 ```-Verify that you can see the following files:
 README.md, output.tf, variables.tf and main.tf files
 ```
@@ -30,19 +32,25 @@ run : terraform workspace list
 ```
 4. Creating the staging environment:
 ```
+- Run terraform workspace select staging
+- Run terraform init  > wait for success green message.
 - Run: terraform plan -var-file .\staging.tfvars
 - wait until it will be finished with no errors.
 - Run: terraform apply -var-file .\staging.tfvars
+- Type yes 
 -The deployment should be end successfully 
-- you should get output of the admin_password, current_workspace and vmss_front_ip.
+- you should get output of the admin_password, current_workspace:staging and vmss_front_ip.
 ```
 5. Creating the production environment:
 ```
-Run: terraform plan -var-file .\prod.tfvars
-wait until it will be finished with no errors.
-Run: terraform apply -var-file .\prod.tfvars
--The deployment should be end successfully 
-you should get output of the admin_password, current_workspace and vmss_front_ip.
+- Run terraform workspace select production 
+You should see: "Switched to workspace "production". message
+- Run: terraform plan -var-file .\prod.tfvars
+- wait until it will be finished with no errors.
+- Run: terraform apply -var-file .\prod.tfvars
+- Type yes 
+- The deployment should be end successfully 
+you should get output of the admin_password, current_workspace:production and vmss_front_ip.
 ```
 
 
