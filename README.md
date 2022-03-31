@@ -19,13 +19,20 @@ run $ git clone https://github.com/IdanErgaz/Terraform-IaC.git
 README.md, output.tf, variables.tf and main.tf files
 ```
 Be aware: the staging.tfvars and prod.tfvars file will be sent via the Discord !!!
-Copy the files in the same directory you clone the repository.
+
+Copy the files to the same directory you clone the repository.
+
 
 2. Create two workspaces - for production and for staging
 
 run the commands:
  - terraform workspace new production
  - terraform workspace new staging  
+you should see:
+
+  default
+  production
+* staging
 
 3. Validate that both workspaces were created
 ```
