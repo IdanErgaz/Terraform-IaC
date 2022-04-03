@@ -5,7 +5,7 @@
 
 ## Deployment
  - Create Network with two subnets (private and public)
- - create a network security group
+ - Create a network security group
  - Deploy Linux virtual machine scale set + load balancer behind network security group.
  - Add Azure postgresql as a service with configured fw rules.
  
@@ -46,7 +46,7 @@ run : terraform workspace list
 - wait until it will be finished with no errors.
 - Run: terraform apply -var-file .\staging.tfvars
 - Type yes 
--The deployment should be end successfully 
+- Wait for 1-3 minutes - The deployment should be end successfully 
 - you should get output of the admin_password, current_workspace:staging and vmss_front_ip.
 ```
 5. Creating the production environment:
